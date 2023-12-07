@@ -1,0 +1,10 @@
+{
+  "node": "LOCAL_OS",
+  "owner": "jakub.szeliga@infinitedata.com",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "LINUX",
+  "taskType": "AE_SHELL_SCRIPT",
+  "customFieldValues": {
+  }
+}
