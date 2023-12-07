@@ -1,0 +1,29 @@
+{
+  "owner": "jakub.szeliga@infinitedata.com",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "INTERNAL",
+  "taskType": "ARCHIVE",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "actionTargetType": "CRITERIA",
+    "criteria": {
+      "processingStatus": 
+      [
+        "COMPLETED"
+      ],
+      "showAdvancedCriteria": true,
+      "tagOperator": "ANY",
+      "tags": 
+      [
+        "PKO"
+      ]
+    },
+    "keepForcedStatus": true,
+    "operator": "",
+    "restartType": "RESTART_FROM_BEGINNING",
+    "resultMax": 100,
+    "resultMin": 1
+  }
+}
