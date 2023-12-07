@@ -1,0 +1,9 @@
+{
+  "owner": "jakub.szeliga@infinitedata.com",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "LINUX",
+  "taskType": "SH",
+  "customFieldValues": {
+  }
+}
