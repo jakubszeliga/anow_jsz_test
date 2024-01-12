@@ -1,0 +1,12 @@
+{
+  "owner": "jakub.szeliga@infinitedata.com",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "INTERNAL",
+  "taskType": "AE_SCRIPT",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "script": ":S &ASSIGNED_TO# = &ASSIGNED_TO#\n:S &NOTES# = &NOTES#\n:S &EXT_NOTES# = &EXT_NOTES#\n:S &OUTPUT# = &OUTPUT#1"
+  }
+}
