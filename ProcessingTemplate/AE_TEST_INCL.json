@@ -6,5 +6,8 @@
   "serverNodeType": "LINUX",
   "taskType": "AE_SHELL_SCRIPT",
   "customFieldValues": {
+  },
+  "processingCommand": {
+    "script": "11"
   }
 }
