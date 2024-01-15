@@ -1,0 +1,13 @@
+{
+  "node": "WIN_AGENT_OS",
+  "owner": "jakub.szeliga@infinitedata.com",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "WINDOWS",
+  "taskType": "SH",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "script": "cd C:\\anow\\agent\\bin\ncmd /C test_jsz"
+  }
+}
