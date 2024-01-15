@@ -1,0 +1,15 @@
+{
+  "endpoint": "TEST_DB_ENDPOINT",
+  "endpointType": "ORACLE",
+  "node": "ORACLE_DB",
+  "owner": "jakub.szeliga@infinitedata.com",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "ORACLE",
+  "taskType": "RDBMS_SQL",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "script": "SELECT column_name, data_type\nFROM all_tab_columns\nWHERE table_name = 'PKO_TEST';"
+  }
+}
