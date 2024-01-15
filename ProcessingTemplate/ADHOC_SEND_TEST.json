@@ -1,0 +1,17 @@
+{
+  "owner": "jakub.szeliga@infinitedata.com",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "INTERNAL",
+  "taskType": "ADHOC_REPORT_SEND",
+  "customFieldValues": {
+  },
+  "designParameters": 
+  [
+    {
+      "editorType": "TEXT",
+      "name": "domain_id",
+      "title": "domain_id"
+    }
+  ]
+}
