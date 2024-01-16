@@ -1,0 +1,29 @@
+{
+  "endpoint": "D2_DB_ENDPOINT",
+  "endpointType": "POSTGRESQL",
+  "node": "D2_DB",
+  "owner": "jakub.szeliga@infinitedata.com",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "POSTGRESQL",
+  "tags": 
+  [
+    "DB-MTN"
+  ],
+  "taskType": "RDBMS_SQL",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "rowsVariableLevel": "SELF",
+    "script": "BEGIN;\n\n---- Locking table audit_log\nLOCK TABLE anow.anow.audit_log IN ACCESS EXCLUSIVE MODE;\n\n---- Deleting indexes and constraints for audit_log\nDROP INDEX IF EXISTS anow.idx_audit_log;\nALTER TABLE anow.audit_log DROP CONSTRAINT audit_log_pkey ;\nALTER TABLE anow.audit_log DROP CONSTRAINT audit_log_action_type_check ;\n\n---- Changing the table name audit_log\nALTER TABLE anow.anow.audit_log RENAME TO audit_log_${currentDateYYYYMMDD}; -- zmiana nazwy tabeli\n\n---- Creating new audit_log table\nCREATE TABLE anow.audit_log AS TABLE anow.audit_log_${currentDateYYYYMMDD} WITH NO DATA;\n\n---- Creating indexes and constraints\nCREATE INDEX idx_audit_log ON anow.audit_log USING btree (domain, created_by, table_name, object_id);\n\nALTER TABLE anow.audit_log\nADD CONSTRAINT audit_log_action_type_check CHECK ((action_type = ANY (ARRAY['INSERT'::text, 'DELETE'::text, 'UPDATE'::text, 'TRUNCATE'::text])));\n\nALTER TABLE anow.audit_log\nADD CONSTRAINT audit_log_pkey PRIMARY KEY (id);\n\nCOMMIT;\n\n---- Inserting current data into a new table\nINSERT INTO anow.audit_log\nSELECT * FROM anow.audit_log_${currentDateYYYYMMDD}\nWHERE action_timestamp >= date_trunc('day', CURRENT_TIMESTAMP) - INTERVAL '${IntDays} days'\n\n---- Deleting a copied table\n\n--DROP TABLE anow.audit_log_${currentDateYYYYMMDD};"
+  },
+  "designParameters": 
+  [
+    {
+      "editorType": "NUMBER",
+      "name": "IntDays",
+      "required": true,
+      "title": "Number of days to retain data"
+    }
+  ]
+}
