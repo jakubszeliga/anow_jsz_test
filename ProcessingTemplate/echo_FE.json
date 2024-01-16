@@ -1,0 +1,14 @@
+{
+  "node": "LOCAL_OS",
+  "owner": "jakub.szeliga@infinitedata.com",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "LINUX",
+  "taskType": "SH",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "forEachCollectionType": "TEXT",
+    "script": "echo ${COMB_NAME}"
+  }
+}
