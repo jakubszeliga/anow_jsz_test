@@ -1,0 +1,41 @@
+{
+  "node": "LOCAL_OS",
+  "owner": "vapashko",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "LINUX",
+  "tags": 
+  [
+    "UC_OBJ",
+    "UC_OBJ_OLD"
+  ],
+  "taskType": "SH",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "script": "response=$(curl -X POST --insecure \\n  \"${SERVER}/automatenow/api/folder/create\" \\n    --header \"Accept: application/json\" \\n    --header \"Authorization: Bearer ${ACCESS_TOKEN}\" \\n    --header \"Domain: ${domain}\" \\n    --data \"id=${UC_NAME}\" 2>&1)
+
+  status_code=$(echo $response  | grep '\"status\":' |  sed 's/\\(.*\\)\"status\":\\(.\\),\"\\(.*\\)/\\2/')
+  if [ \"${status_code}\" = \"0\" ]; then
+    echo \"---------Create folder: ${UC_NAME} in domain: ${domain} is SUCCEDED---------\"
+  else
+    echo \"---------Create folder: ${UC_NAME} in domain: ${domain} is FAILED---------\"
+    exit 1
+  fi"
+  },
+  "designParameters": 
+  [
+    {
+      "defaultValue": "https://d2.infinitedata.com",
+      "editorType": "TEXT",
+      "name": "SERVER",
+      "title": "SERVER"
+    },
+    {
+      "defaultValue": "TestUseCase",
+      "editorType": "TEXT",
+      "name": "UC_NAME",
+      "title": "UC_NAME"
+    }
+  ]
+}
