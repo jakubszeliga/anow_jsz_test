@@ -1,0 +1,26 @@
+{
+  "codeRepository": "[TEST_JSZ]anow_jsz_test_new",
+  "resourceType": "VARIABLE",
+  "value": "! Forbiden characters @ # % ^ / !@#$%^&*()
+:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", '@', '(AT)')
+:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", '#', '(HASH)')
+:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", '%', '(PERCENT)')
+:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", '^', '|')
+:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", '$', '(DOLAR)')
+:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", '&', '(AND)')
+:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", '*', '(STAR)')
+:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", '\', '\\\')
+:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", '\\\n', '\n')
+!----------------------------------------------------------
+:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", \"'\", \"|\")
+:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", '\"', '|')
+:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", '{', '-')
+:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", '}', '-')
+:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", \"&NL#\", \"\n\")
+!:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", '(', '|')
+!:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", ')', '|')
+
+!---------------------------------------------------------- (0x09 00001001 HT (Horizontal Tab))
+:SET &REQ_TEXT# = STR_SUBSTITUTE(\"&REQ_TEXT#\", ' ', '|')
+!---------------------------------------------------------- (0x0d 00001001 (Enter))"
+}
