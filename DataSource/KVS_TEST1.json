@@ -1,0 +1,26 @@
+{
+  "codeRepository": "[TEST_JSZ]anow_jsz_test_new",
+  "dataSourceType": "LOCAL_KEY_VALUE_STORE",
+  "dataType": "STRING",
+  "errorHandling": "INIT",
+  "validity": "FREE",
+  "records": 
+  [
+    {
+      "key": "1",
+      "value": "{
+'CI': 'CZSTLLSPC000001',
+'prio': 'R5',
+'groupL1': 'GLOBAL-OPS.ACOC.AWX',
+'groupL2': 'GLOBAL-OPS.ACOC.UC.OWNERS',
+'groupL3': 'GLOBAL-OPS.ACOC.UC.OWNERS',
+'METADATA.DUMMY.WST:groupL1': 'GLOBAL-OPS.L1',
+'METADATA.DUMMY.WST:groupL2': 'GLOBAL-OPS.L2',
+'METADATA.DUMMY.WST:prio': 'R5',
+'READ.DUMMY.JLIN:groupL1': 'PUP-SUPPORTL1',
+'READ.DUMMY.JLIN:instructions': 'Do this and that.',
+'WF-PROCESS.DUMMY.S:prio': 'R3'
+}"
+    }
+  ]
+}
