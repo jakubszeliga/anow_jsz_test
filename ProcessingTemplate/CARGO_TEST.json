@@ -1,0 +1,28 @@
+{
+  "node": "LOCAL_OS",
+  "owner": "jakub.szeliga@infinitedata.com",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "LINUX",
+  "taskType": "SH",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "script": "echo ${PARAM1}\necho ${CARGO}\n\necho ${domain}"
+  },
+  "designParameters": 
+  [
+    {
+      "defaultValue": "TEXT_FILE::LTFS_1(CARGO)",
+      "editorType": "TEXT_FILE",
+      "name": "CARGO",
+      "optionDataSource": "LTFS_1",
+      "title": "CARGO"
+    },
+    {
+      "editorType": "TEXT_AREA",
+      "name": "PARAM1",
+      "title": "PARAM1"
+    }
+  ]
+}
