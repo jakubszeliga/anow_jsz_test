@@ -1,0 +1,12 @@
+{
+  "owner": "jakub.szeliga@infinitedata.com",
+  "priority": "0",
+  "processingType": "TASK",
+  "serverNodeType": "LINUX",
+  "taskType": "SH",
+  "customFieldValues": {
+  },
+  "processingCommand": {
+    "script": "echo ${CARGO}\necho $(stat --printf \"%s\" ${CARGO})\n\nif[[ $(stat --printf \"%s\" ${CARGO}) > 4 ]]; then\n    sh_ftst=`date +%Y%m%d_%H%M%S`\n    echo $ssh_ftst\n  else \n    sh_file=\"\"\n    echo \"Wyzwanie: nie podano wymaganych parametrów wejściowych\"\n    exit 11\n  fi\n"
+  }
+}
